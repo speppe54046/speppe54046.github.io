@@ -27,6 +27,21 @@ var popUpInfo = function(feature, layer){
   var popCount = feature.properties.POPULATION
      layer.bindPopup('This neighborhood is called ' + name +
     '<br>its population is: ' + popCount + '<br> Average neighborhood population is: 7600')
+populationMapBR.addLayer(layer)
 
 }
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png').addTo(mapOfBR)
+var dataList = {
+'Population of East Baton Rouge Parish': populationMapBR
+}
+var lightBasemap= L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png').addTo(mapOfBR)
+var darkBasemap= L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(mapOfBR)
+
+var baseMapList= {
+  'Light Map': lightBasemap,
+  'Dark Map': darkBasemap
+
+}
+
+var populationMapBR= L.layerGroup().addTo(mapOfBR)
+
+L.control.layers(baseMapList, dataList).addTo(mapOfBR)
