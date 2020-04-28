@@ -30,6 +30,7 @@ var popUpInfo = function(feature, layer){
 populationMapBR.addLayer(layer)
 
 }
+var populationMapBR= L.layerGroup().addTo(mapOfBR)
 var dataList = {
 'Population of East Baton Rouge Parish': populationMapBR
 }
@@ -41,7 +42,5 @@ var baseMapList= {
   'Dark Map': darkBasemap
 
 }
-
-var populationMapBR= L.layerGroup().addTo(mapOfBR)
 
 L.control.layers(baseMapList, dataList).addTo(mapOfBR)
