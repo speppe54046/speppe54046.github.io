@@ -1,4 +1,4 @@
-var mapOfBR = L.map('mapid3').setView([30.473631, -91.143306],10);
+var mapOfBR = L.map('geogfinal').setView([30.473631, -91.143306],10);
 var neighborhood ='https://opendata.arcgis.com/datasets/7c5e82ef83834de2ad2478efc86744ae_0.geojson'
 jQuery.getJSON(neighborhood, function (data) {
 var neighborhoodStyle = function(feature) {
